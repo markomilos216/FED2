@@ -1,0 +1,24 @@
+<header>
+    <div class="navbar">
+        <a href="#" class="logo"><img src="logo.png" alt="Modio-logo"></a>
+        <nav class="navigation">
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="log-in-btn">Log In</a>
+        <div class="toggle-btn" (click)="onShowDropdownMenu()">
+            <i [ngClass]="['fa-solid', showDropdownMenu ? 'fa-xmark' : 'fa-bars']"></i>
+        </div>
+    </div>
+    <div [ngClass]="{'dropdown-menu': true, open: showDropdownMenu}">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Log In</a></li>
+        </ul>
+    </div>
+</header>
