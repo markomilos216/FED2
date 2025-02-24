@@ -1,0 +1,30 @@
+<header>
+    <div class="navbar">
+        <a routerLink="home" class="logo"><img src="logo.png" alt="Modio-logo"></a>
+        <nav class="navigation">
+            <ul class="links">
+                <li><a routerLink="home">Home</a></li>
+                <li><a routerLink="products">Products</a></li>
+                <li><a routerLink="notfound">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="right-side-header">
+            <a routerLink="login" class="log-in-btn">Log In</a>
+            <div class="cart-container" routerLink="cart">
+                <span class="cart-quantity">6</span>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <div class="toggle-btn" (click)="onShowDropdownMenu()">
+                <i [ngClass]="['fa-solid', showDropdownMenu ? 'fa-xmark' : 'fa-bars']"></i>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="{'dropdown-menu': true, open: showDropdownMenu}">
+        <ul>
+            <li><a routerLink="home">Home</a></li>
+            <li><a routerLink="products">Products</a></li>
+            <li><a routerLink="notfound">Contact</a></li>
+            <li><a routerLink="notfound">Log In</a></li>
+        </ul>
+    </div>
+</header>
