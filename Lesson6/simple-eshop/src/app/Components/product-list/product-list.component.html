@@ -1,0 +1,24 @@
+<section class="product-list-container">
+    <div class="alignment-box">
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <label for="" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="product-list">
+        <div class="product-card" *ngFor="let product of products" [routerLink]="'/products/' + product.id">
+            <img src="testing-img.png" alt="t-shirt" class="product-image">
+            <div class="product-info-container">
+                <h2 class="product-title">{{ product.productName }}</h2>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-category">{{ product.category.toUpperCase() }}</p>
+                <p class="product-price"><strong>Price:</strong> {{ product.price }} €</p>
+            </div>
+            <button class="buy-product-btn">ADD TO CART <i class="ri-shopping-cart-2-line"></i></button>
+        </div>
+    </div>
+</section>

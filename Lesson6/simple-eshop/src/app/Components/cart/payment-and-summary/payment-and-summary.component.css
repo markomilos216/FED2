@@ -1,0 +1,11 @@
+.payment-and-summary-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+    padding: 20px 15px;
+    flex-wrap: wrap;
+}
