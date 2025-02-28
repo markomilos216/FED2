@@ -1,0 +1,47 @@
+<section class="product-list-container">
+    <div class="alignment-box">
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <label for="" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            <div class="filer-menu-icon" (click)="toggleFilterOptions()">
+                <div class="filer-option">Filer <i class="fa-solid fa-filter"></i></div>
+            </div>
+            <div class="show-hide-filters-container" *ngIf="showHideFilters">
+                <div class="price-filtering-container">
+                    <form class="price-filter">
+                        <p class="price-filter-heading">Price:</p>
+                        <div class="inputs-container">
+                            <input type="number" name="min-price" id="min-price" placeholder="From" #minPriceValue>
+                            <input type="number" name="max-price" id="max-price" placeholder="To" #maxPriceValue>
+                        </div>
+                        <button class="filter-price-btn" (click)="filerProductsByPrice(minPriceValue.value, maxPriceValue.value)">Search</button>
+                    </form>
+                </div>
+                <div class="category-dropdown-menu">
+                    <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+                        <option value="" disabled *ngIf="!selectedCategory">Select category</option>
+                        <option value="all">All</option>
+                        <option value="womens-clothing">Womens-clothing</option>
+                        <option value="mens-clothing">Mens-clothing</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-list">
+        <div class="product-card" *ngFor="let product of products$ | async" [routerLink]="'/products/' + product.id">
+            <img [src]="product.imageUrl" alt="t-shirt" class="product-image">
+            <div class="product-info-container">
+                <h2 class="product-title">{{ product.name }}</h2>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-category">{{ product.categoryId.toUpperCase() }}</p>
+                <p class="product-price"><strong>Price:</strong> {{ product.price }} €</p>
+            </div>
+            <button class="buy-product-btn">ADD TO CART <i class="ri-shopping-cart-2-line"></i></button>
+        </div>
+    </div>
+</section>
