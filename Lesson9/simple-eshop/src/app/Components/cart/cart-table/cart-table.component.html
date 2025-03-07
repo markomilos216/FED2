@@ -1,0 +1,35 @@
+<section class="cart-container">
+    <table class="cart-table">
+        <thead>
+            <th>Product name</th>
+            <th>Quanttity</th>
+            <th>Price</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr class="main-content-with-border" *ngFor="let item of cartItems">
+                <td class="product-name-container">
+                    <img [src]="item.imageUrl" [alt]="item.name">
+                    <p class="product-name">{{ item.name }}</p>
+                </td>
+                <td class="product-qunatity-container">
+                    <button class="decrease-quantity-btn">-</button>
+                    <span class="qunatity-number">{{ item.quantity }}</span>
+                    <button class="increase-quantity-btn">+</button>
+                </td>
+                <td class="product-price">{{ (item.price * item.quantity).toFixed(2) }}€</td>
+                <td class="delete-item-btn" (click)="removeItem(item.id)"><i class="fa-regular fa-trash-can"></i></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="total-price-text">Total price:</td>
+                <td class="total-price-value">{{ totalPrice }} €</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <section class="action-btns-container">
+        <button routerLink="/products"><i class="fa-solid fa-shop"></i> BACK TO STORE</button>
+        <button routerLink="personal-info-shipping-and-payment">PROCEED TO CHECKOUT <i class="fa-solid fa-arrow-right"></i></button>
+    </section>
+</section>
