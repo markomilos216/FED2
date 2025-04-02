@@ -1,0 +1,81 @@
+.content-wrapper{
+    padding-left: 25px;
+    width: 100%;
+    min-width: 150px;
+}
+.content-wrapper .main-heading{
+    padding-bottom: 35px;
+}
+.users-table{
+    width: 100%;
+    border-spacing: 0;
+    font-size: 18px;
+}
+.users-table thead th{
+    text-align: left;
+    border-bottom: 1px solid #FFB929;
+}
+.users-table thead th{
+    padding: 15px 10px;   
+}
+tbody tr td{
+    border-bottom: 1px solid #FFB929;
+    padding: 8px 15px 8px 0;
+}
+tbody tr td:not(:last-child){
+    padding-left: 10px;
+}
+tbody tr td select{
+    font-size: 15px;
+    font-family: inherit;
+    color: #333;
+    background-color: #FFB929;
+    outline: none;
+    border: none;
+    padding: 4px 6px;
+}
+tbody tr td button{
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    cursor: pointer;
+}
+@media screen and (max-width: 1240px) {
+    .content-wrapper{
+        padding-left: 12px;
+    }
+    .users-table{
+        font-size: 15px;
+        padding-right: 12px;
+    }
+    tbody tr td{
+        padding: 8px 4px 6px 0;
+    }
+    tbody tr td select{
+        padding: 4px;
+    }
+    tbody tr td button{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content-wrapper{
+        width: 100%;
+    }
+    .content-wrapper .main-heading{
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width: 470px) {
+    tbody tr td{
+        padding-right: 25px;
+    }
+    thead th:nth-child(2),
+    tbody tr td:nth-child(2){
+        display: none;
+    }
+}
+
