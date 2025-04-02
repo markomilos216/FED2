@@ -1,0 +1,74 @@
+<section class="register-form-container">
+    <div class="register-card">
+        <div class="register-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <h2 class="card-title">Register</h2>
+        <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <label for="user-name">Name</label>
+            <input type="text" name="user-name" formControlName="name">
+            <small class="error-msg" *ngIf="registerForm.get('name')?.hasError('required') && registerForm.get('name')?.touched">
+                Name is required
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('name')?.hasError('minlength') && registerForm.get('name')?.touched">
+                Name must contain at least 3 characters.
+            </small>
+            <label for="user-surname">Surname</label>
+            <input type="text" name="user-surname" formControlName="surname">
+            <small class="error-msg" *ngIf="registerForm.get('surname')?.hasError('required') && registerForm.get('surname')?.touched">
+                Surname is required
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('surname')?.hasError('minlength') && registerForm.get('surname')?.touched">
+                Surname must contain at least 3 characters
+            </small>
+            <label for="user-email">Email</label>
+            <input type="email" name="user-email" formControlName="email">
+            <small class="error-msg" *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched">
+                Email is required
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched">
+                Please enter valid email
+            </small>
+            <label for="user-phone">Phone Number</label>
+            <input type="text" name="user-phone" formControlName="phone">
+            <small class="error-msg" *ngIf="registerForm.get('phone')?.hasError('required') && registerForm.get('phone')?.touched">
+                Phone is required
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('phone')?.hasError('pattern') && registerForm.get('phone')?.touched">
+                Please enter valid phone number
+            </small>
+            <label for="user-password">Password</label>
+            <input type="password" name="user-password" formControlName="password">
+            <small class="error-msg" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+                Password is required
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('password')?.hasError('minLength') && registerForm.get('password')?.touched">
+                Password must be at least 8 characters long
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('password')?.hasError('missingUpperCase') && registerForm.get('password')?.touched">
+                Password must contain at least one uppercase letter
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('password')?.hasError('missingNumber') && registerForm.get('password')?.touched">
+                Password must contain at least one number
+            </small>
+            <small class="error-msg" *ngIf="registerForm.get('password')?.hasError('missingSpecialChar') && registerForm.get('password')?.touched">
+                Password must contain at least one special character (!&#64;#$%^&*...)
+            </small>
+            <label for="reenter-password">Re-enter Password</label>
+            <input type="password" name="reenter-password" formControlName="passwordCheck">
+            <small class="error-msg" *ngIf="registerForm.get('passwordCheck')?.hasError('required') && registerForm.get('passwordCheck')?.touched">
+                Please enter your password again
+            </small>
+            <small class="error-msg"  *ngIf="registerForm.get('passwordCheck')?.invalid && registerForm.get('passwordCheck')?.touched || !isPasswordMatch">
+                Passwords must match
+            </small>
+            <button type="submit">CREATE ACCOUNT</button>
+        </form>
+        <div class="card-footer">
+            <p class="card-footer-text">Already have an account? 
+                <a routerLink="/login">Log in</a>
+            </p>
+        </div>
+    </div>
+</section>
+
