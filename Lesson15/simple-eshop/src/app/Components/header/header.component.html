@@ -1,0 +1,46 @@
+<header>
+    <div class="navbar">
+        <a routerLink="home" class="logo"><img src="logo.png" alt="Modio-logo"></a>
+        <nav class="navigation">
+            <ul class="links">
+                <li><a routerLink="home">Home</a></li>
+                <li><a routerLink="products">Products</a></li>
+                <li><a routerLink="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="right-side-header">
+            <a routerLink="login" class="log-in-btn" *ngIf="!isLoggedIn">Log In</a>
+            <div class="user-dropdown-menu-wrapper" *ngIf="isLoggedIn">
+                <p class="user-account" (click)="onShowUserDropdownMenu()">{{ user?.name?.charAt(0)?.toUpperCase() }}</p>
+                <div [ngClass]="{'user-login-dropdown-menu': true, open: showUserDropdownMenu}">
+                    <div class="user-dropdown-content">
+                        <div class="user-info">
+                            <h2 class="user-name">{{ user?.name }} {{ user?.surname }}</h2>
+                        </div>
+                        <hr>
+                        <ul>
+                            <li><a routerLink="/my-account/user-profile"><i class="fa-brands fa-elementor"></i> Dashboard</a></li>
+                            <li (click)="onLogOut()"><a ><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-container" routerLink="cart">
+                <span class="cart-quantity">{{ numberOfCartItems }}</span>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <div class="toggle-btn" (click)="onShowDropdownMenu()">
+                <i [ngClass]="['fa-solid', showDropdownMenu ? 'fa-xmark' : 'fa-bars']"></i>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="{'dropdown-menu': true, open: showDropdownMenu}">
+        <ul>
+            <li><a routerLink="home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a routerLink="products"><i class="fa-solid fa-shirt"></i> Products</a></li>
+            <li><a routerLink="contact"><i class="fa-solid fa-mobile-screen-button"></i> Contact</a></li>
+            <li *ngIf="!isLoggedIn"><a routerLink="login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Log In</a></li>
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,36 @@
+<section class="main-container">
+    <div class="card">
+        <div class="header">
+            <h2 class="title">Payment Details</h2>
+            <img src="visa-icon.png" alt="visa icon" class="logo">
+        </div>
+        <form class="payment-form">
+            <div class="row">
+                <label for="card-number">Card Number</label>
+                <input type="text" name="card-number" id="card-number" class="card-number" placeholder="1234 1234 1234 1234">
+            </div>
+            <div class="footer-card-container">
+                <div class="card-date-container">
+                    <div class="row card-expire">
+                        <div class="row card-expire-month">
+                            <label for="card-month">Month</label>
+                            <input type="text" name="card-month" id="card-month" class="card-month" placeholder="07">
+                        </div>
+                        <div class="row card-expire-year">
+                            <label for="card-year">Year</label>
+                            <input type="text" name="card-year" id="card-year" class="card-year" placeholder="2025">
+                        </div>
+                    </div>
+                </div>
+                <div class="row card-cvv">
+                    <label for="card-cvv">CVV</label>
+                    <input type="text" name="card-cvv" id="card-cvv" class="card-cvv" placeholder="248">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="action-btns-container">
+        <button routerLink="/cart"><i class="fa-solid fa-table-list"></i> BACK TO CART</button>
+        <button>PAY NOW <i class="fa-regular fa-credit-card"></i></button>
+    </div>
+</section>
