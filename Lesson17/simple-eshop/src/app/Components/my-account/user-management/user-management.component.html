@@ -1,0 +1,27 @@
+<div class="content-wrapper">
+    <h2 class="main-heading">User Management</h2>
+    <table class="users-table">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name + ' ' + user.surname }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <select [ngModel]="user.role" (ngModelChange)="onChangeUserRole(user, $event)" name="user-role" id="user-role">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </td>
+                <td>
+                    <button><i class="fa-regular fa-trash-can"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

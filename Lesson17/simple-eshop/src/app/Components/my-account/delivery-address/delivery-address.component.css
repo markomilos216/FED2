@@ -1,0 +1,166 @@
+.content-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 150px;
+    height: 55vh;
+    padding: 0 25px;
+}
+.content-wrapper .main-heading{
+    padding-bottom: 35px;
+}
+button:not(.confirm-btn, .cancel-btn){
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    cursor: pointer;
+}
+.content-wrapper .add-new-btn{
+    position: absolute;
+    font-size: 40px;
+    top: 15px;
+    right: 44px;
+    color: #008000c9;
+    cursor: pointer;
+}
+.container{
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 7px 5px;
+}
+.container {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+.no-delivery-address-container .no-delivery-address-text{
+    text-align: center;
+    font-size: 18px;
+}
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+.container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.address-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px 3px rgb(0 0 0 / 10%);
+    border-radius: 25px;
+    position: relative;
+    padding: 15px;
+    margin-bottom: 13px;
+}
+.address-wrapper .delete-btn{
+    color: red;
+    top: 3px;
+    right: 4px;
+    font-size: 24px;
+}
+.address-container{
+    display: flex;
+    width: 100%;
+    gap: 70px;
+}
+.address-wrapper .edit-address-btn{
+    color: #1717efe6;
+    bottom: 5px;
+    right: 5px;
+    font-size: 19px;
+}
+.delete-confirmation-dialog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 35px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+.delete-confirmation-dialog .dialog-msg{
+    text-align: center;
+    font-size: 18px;
+}
+.delete-confirmation-dialog .modal-buttons-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.modal-buttons-container button{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    padding: 5px 15px 3px 15px;
+    color: #333;
+    height: 45px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.modal-buttons-container .confirm-btn{
+    background-color: #008000c9;
+}
+.modal-buttons-container .confirm-btn:hover{
+    background-color: #008000d6;
+}
+.modal-buttons-container .cancel-btn{
+    background-color: #ee4d4d;
+    width: 60.59px;
+}
+.modal-buttons-container .cancel-btn:hover{
+    background-color: #e80a0ad4;
+}
+@media screen and (max-width: 1080px) {
+    .content-wrapper{
+        padding: 12px;
+    }
+    .address-container{
+        flex-direction: column;
+        gap: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content-wrapper .main-heading{
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+    .address-wrapper .address-container div{
+        font-size: 14px;
+    }
+    .no-delivery-address-container .no-delivery-address-text{
+        font-size: 14px;
+        width: 80%;
+        margin: auto;
+    }
+    .content-wrapper .add-new-btn{
+        font-size: 30px;
+        top: -7px;
+        right: 35px;
+    }
+    .address-wrapper .delete-btn{
+        font-size: 19px;
+    }
+    .address-wrapper .edit-address-btn{
+        font-size: 16px;
+    }
+    .delete-confirmation-dialog{
+        width: 80%;
+    }
+}
