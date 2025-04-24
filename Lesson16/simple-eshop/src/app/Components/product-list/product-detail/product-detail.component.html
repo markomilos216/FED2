@@ -1,0 +1,23 @@
+<section class="main-wrapper" *ngIf="selectedProduct">
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <aside class="left-side-product-detail">
+                <img [src]="selectedProduct.imageUrl" alt="black t-shirt">
+            </aside>
+            <aside class="right-side-product-detail">
+                <h3 class="product-name">{{ selectedProduct.name }}</h3>
+                <p class="product-description">{{ selectedProduct.description }}</p>
+                <p class="product-qunatity"><b>In Stock:</b> {{ selectedProduct.stock }} pcs</p>
+                <p class="product-price">€ {{ selectedProduct.price }} </p>
+                <div class="action-container">
+                    <div class="quantity-container">
+                        <button class="decrease-quantity-btn" (click)="decreaseNumberOfItems()">-</button>
+                        <span class="quantity-nuber" > {{ setNumberOfItems }} </span>
+                        <button class="increase-quantity-btn" (click)="increaseNumberOfItems()">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" (click)="addProductToCart()">ADD TO CART <i class="ri-shopping-cart-2-line"></i></button>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
