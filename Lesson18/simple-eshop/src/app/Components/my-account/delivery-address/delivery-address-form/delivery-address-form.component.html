@@ -1,0 +1,87 @@
+<div class="main-container">
+    <h2 class="main-heading">{{ isEditMode ? 'Update Address' : 'Add New Adress' }}</h2>
+    <div class="container">
+        <form class="delivery-address-form" [formGroup]="deliveryAddressForm" (ngSubmit)="onSubmitDeliveryAddressForm()">
+            <div class="row">
+                <div class="wrapper">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" formControlName="name">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('name')?.hasError('required') && deliveryAddressForm.get('name')?.touched">
+                        Name is required
+                    </small>
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('name')?.hasError('minlength') && deliveryAddressForm.get('name')?.touched">
+                        Name must contain at least 3 characters
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="surname" id="surname" formControlName="surname">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('surname')?.hasError('required') && deliveryAddressForm.get('surname')?.touched">
+                        Surname is required
+                    </small>
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('surname')?.hasError('minlength') && deliveryAddressForm.get('surname')?.touched">
+                        Surname must contain at least 3 characters
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" formControlName="email">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('email')?.hasError('required') && deliveryAddressForm.get('email')?.touched">
+                        Email is required
+                    </small>
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('email')?.hasError('email') && deliveryAddressForm.get('email')?.touched">
+                        Please enter valid email
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="phone">Phone</label>
+                    <input type="number" name="phone" id="phone" formControlName="phone">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('phone')?.hasError('required') && deliveryAddressForm.get('phone')?.touched">
+                        Phone is required
+                    </small>
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('phone')?.hasError('pattern') && deliveryAddressForm.get('phone')?.touched">
+                        Please enter valid phone number
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="city">City</label>
+                    <input type="email" name="city" id="city" formControlName="city">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('city')?.hasError('required') && deliveryAddressForm.get('city')?.touched">
+                        City is required
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="street">Street</label>
+                    <input type="street" name="street" id="street" formControlName="street">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('street')?.hasError('required') && deliveryAddressForm.get('street')?.touched">
+                        Street is required
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="postal-code">Postal Code</label>
+                    <input type="text" name="postal-code" id="postal-code" formControlName="postalCode">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('postalCode')?.hasError('required') && deliveryAddressForm.get('postalCode')?.touched">
+                        Postal code is required
+                    </small>
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('postalCode')?.hasError('pattern') && deliveryAddressForm.get('postalCode')?.touched">
+                        Please enter valid postal code
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="state">State</label>
+                    <input type="text" name="state" id="state" formControlName="state">
+                    <small class="error-msg" *ngIf="deliveryAddressForm.get('state')?.hasError('required') && deliveryAddressForm.get('state')?.touched">
+                        State is required
+                    </small>
+                </div>
+            </div>
+            <button class="update-btn" type="submit">{{ isEditMode ? 'Update Address' : 'Add Address' }}</button>
+        </form>
+    </div>
+</div>

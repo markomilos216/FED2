@@ -1,0 +1,141 @@
+.personal-data-container{
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 100px 100px rgb(0 0 0 / 10%);
+    margin-right: 40px;
+}
+.personal-data-container .personal-data-title{
+    text-align: center;
+    padding-bottom: 18px;
+}
+.personal-data-container .personal-data-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.personal-data-form .form-row-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    padding-bottom: 15px;
+}
+.personal-data-form label{
+    display: block;
+    font-size: 16px;
+    padding: 0 0 4px 7px;
+    position: relative;
+    cursor: pointer;
+}
+.personal-data-form label.required::before{
+    content: "*";
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+}
+.personal-data-form input{
+    width: 220px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 0 15px;
+    outline: none;
+}
+.personal-data-form input:focus,
+.personal-data-form textarea:focus{
+    border: 1px solid #FFB929;
+}
+.content-box{
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    width: 90%;
+    top: 99%;
+    left: 11px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+.dropdown li{
+    padding: 5px;
+    cursor: pointer;
+}
+.dropdown li:hover{
+    background-color: #ffb92973;
+}
+.personal-data-form textarea{
+    width: 100%;
+    height: 80px;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    resize: none;
+    outline: none;
+}
+.personal-data-agreement-container .container,
+.remember-me-container{
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+}
+.personal-data-agreement-container input,
+.remember-me-container input{
+    width: 15px;
+    accent-color: #FFB929;
+    cursor: pointer;
+}
+.personal-data-agreement-container label,
+.remember-me-container label{
+    padding: 0 0 0 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.personal-data-form input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.error-msg{
+    display: block;
+    color: red;
+    margin-left: 8px;
+    font-weight: bold;
+    max-width: 220px;
+}
+@media screen and (max-width: 1000px) {
+    .personal-data-container{
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 576px) {
+    .personal-data-form{
+        width: 100%;
+    }
+    .personal-data-form .form-row-container{
+        flex-direction: column;
+    }
+    .personal-data-container .personal-data-title{
+        font-size: 20px;
+    }
+    .form-row{
+        width: 100%;
+    }
+    .form-row input{
+        width: 100%;
+    }
+    .form-row label,
+    .personal-data-agreement-container label{
+        font-size: 14px;
+    }
+    .personal-data-agreement-container input{
+        width: 13px;
+    }
+}

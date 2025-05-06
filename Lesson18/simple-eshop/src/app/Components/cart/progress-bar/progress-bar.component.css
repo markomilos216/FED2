@@ -1,0 +1,27 @@
+.progress-bar{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 15px 0;
+}
+.step-1, 
+.step-2{
+    padding: 10px 16px;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: #ccc;
+}
+.line-1{
+    width: 30%;
+    height: 2px;
+    border-radius: 15px;
+    background-color: #ccc;
+    margin: 0 15px;
+}
+@media screen and (max-width: 768px) {
+    .progress-bar div{
+        font-size: 14px;
+    }
+}

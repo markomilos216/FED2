@@ -1,0 +1,9 @@
+<div class="main-container">
+    <progress-bar class="progress-bar"></progress-bar>
+    <personal-info #personalInfoForm></personal-info>
+    <shipping-and-payment #shippingAndPaymentForm></shipping-and-payment>
+    <section class="action-btns-container">
+        <button routerLink="/cart"><i class="fa-solid fa-table-list"></i> BACK TO CART</button>
+        <button  (click)="onProceed()">PROCEED TO CHECKOUT <i class="fa-regular fa-credit-card"></i></button>
+    </section>
+</div>

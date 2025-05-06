@@ -1,0 +1,94 @@
+<section class="main-container">
+    <div class="card">
+        <div class="header">
+            <h2 class="title">Payment Details</h2>
+            <img src="visa-icon.png" alt="visa icon" class="logo">
+        </div>
+        <form class="payment-form" [formGroup]="paymentForm">
+            <div class="row-name">
+                <div class="content-box">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" name="full-name" id="full-name" placeholder="John Doe" autocomplete="off" (input)="onInput($event)" formControlName="fullName">
+                    <div *ngIf="paymentForm.get('fullName')?.errors?.['required'] && paymentForm.get('fullName')?.touched">
+                      <small class="error">Name is required</small>
+                    </div>
+                    <div *ngIf="paymentForm.get('fullName')?.errors?.['invalidFullName'] && paymentForm.get('fullName')?.touched">
+                      <small class="error">Please enter both first name and last name separated by space</small>
+                    </div>
+                    <div *ngIf="paymentForm.get('fullName')?.errors?.['tooShort'] && paymentForm.get('fullName')?.touched">
+                      <small class="error">Both first and last name must have at least 3 characters</small>
+                    </div>
+                    <div *ngIf="paymentForm.get('fullName')?.errors?.['invalidCharacters'] && paymentForm.get('fullName')?.touched">
+                      <small class="error">Name can contain only letters (no numbers or special characters)</small>
+                    </div>
+                    <ul *ngIf="showDropdown && filteredCards.length" class="dropdown">
+                        <li *ngFor="let card of filteredCards" (mousedown)="selectedCard(card)">{{ card.name + ' ' + card.surname}}</li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="row-card-number">
+                <label for="card-number">Card Number</label>
+                <input type="text" name="card-number" id="card-number" class="card-number" placeholder="1234 1234 1234 1234" autocomplete="off" formControlName="cardNumber">
+                <div *ngIf="paymentForm.get('cardNumber')?.errors?.['required'] && paymentForm.get('cardNumber')?.touched">
+                    <small class="error">Card number is required</small>
+                </div>
+                <div *ngIf="paymentForm.get('cardNumber')?.errors?.['invalidLength'] && paymentForm.get('cardNumber')?.touched">
+                    <small class="error">Card number must be exactly 16 digits</small>
+                </div>
+                <div *ngIf="paymentForm.get('cardNumber')?.errors?.['invalidCharacters'] && paymentForm.get('cardNumber')?.touched">
+                    <small class="error">Card number must contain only digits</small>
+                </div>
+            </div>
+            <div class="footer-card-container">
+                <div class="card-date-container">
+                    <div class="row card-expire">
+                        <div class="row card-expire-month">
+                            <label for="card-month">Month</label>
+                            <input type="text" name="card-month" id="card-month" class="card-month" placeholder="MM" maxlength="2" autocomplete="off" formControlName="month">
+                            <div *ngIf="paymentForm.get('month')?.errors?.['required'] && paymentForm.get('month')?.touched">
+                                <small class="error">Month is required</small>
+                            </div>
+                            <div *ngIf="paymentForm.get('month')?.errors?.['pattern'] && paymentForm.get('month')?.touched">
+                                <small class="error">Please enter a valid 2-digit month (01–12)</small>
+                            </div>
+                        </div>
+                        <div class="row card-expire-year">
+                            <label for="card-year">Year</label>
+                            <input type="text" name="card-year" id="card-year" class="card-year" placeholder="YY" maxlength="2" autocomplete="off" formControlName="year">
+                            <div *ngIf="paymentForm.get('year')?.errors?.['required'] && paymentForm.get('year')?.touched">
+                                <small class="error">Year is required</small>
+                            </div>
+                            <div *ngIf="paymentForm.get('year')?.errors?.['pattern'] && paymentForm.get('year')?.touched">
+                                <small class="error">Please entsr a valid 2-digit year</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="paymentForm.hasError('expired')">
+                        <small class="error">The card has expired</small>
+                      </div>
+                      <div *ngIf="paymentForm.hasError('invalidMonth')">
+                        <small class="error">Invalid month entered</small>
+                    </div>
+                </div>
+                <div class="row card-cvv">
+                    <label for="card-cvv">CVV</label>
+                    <input type="text" name="card-cvv" id="card-cvv" class="card-cvv" placeholder="248" maxlength="3" autocomplete="off" formControlName="ccv">
+                    <div *ngIf="paymentForm.get('ccv')?.errors?.['required'] && paymentForm.get('ccv')?.touched">
+                        <small class="error">CVV is required</small>
+                    </div>
+                    <div *ngIf="paymentForm.get('ccv')?.errors?.['pattern'] && paymentForm.get('ccv')?.touched">
+                        <small class="error">CVV must be exactly 3 digits</small>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isLoggedIn" class="remember-me-container">
+                <input type="checkbox" name="remember-me" id="remember-me" formControlName="rememberMe">
+                <label for="remember-me">Remember me</label>
+            </div>
+        </form>
+    </div>
+    <div class="action-btns-container">
+        <button routerLink="/cart"><i class="fa-solid fa-table-list"></i> BACK TO CART</button>
+        <button (click)="onProceed()">PAY NOW <i class="fa-regular fa-credit-card"></i></button>
+    </div>
+</section>
