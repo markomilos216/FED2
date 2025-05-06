@@ -1,0 +1,55 @@
+<section class="main-container">
+    <h2 class="summary-heading">Order Summary</h2>
+    <table class="product-summary-table">
+        <thead>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of basketItems">
+                <td class="product-name-container">
+                    <img [src]="item.imageUrl" [alt]="item.name">
+                    <p class="product-description">{{ item.name }}</p>
+                </td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price * item.quantity }} €</td>
+            </tr>
+        </tbody>
+        <thead class="shipping-section-table-head">
+            <th>Shipping</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody class="shipping-section-table-body">
+            <tr>
+                <td class="shipping-option-description">{{ shippingAndPayment.shipping }}</td>
+                <td></td>
+                <td class="shipping-price-section">
+                    <p class="price">{{ (shippingPrices[shippingAndPayment.shipping]).toFixed(2) }} €</p>
+                </td>
+            </tr>
+        </tbody>
+        <thead class="payment-section-table-head">
+            <th>Payment</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody class="payment-section-table-body">
+            <tr>
+                <td class="payment-option-description">{{ shippingAndPayment.payment }}</td>
+                <td></td>
+                <td class="payment-price-section">
+                    <p class="price">{{ (paymentPrices[shippingAndPayment.payment]).toFixed(2) }} €</p>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot class="order-summary-footer">
+            <tr class="total-price-section">
+                <td></td>
+                <td class="total-price-text">Total Price:</td>
+                <td class="total-price-value">{{ countTotalPrice() }} €</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>

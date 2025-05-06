@@ -1,0 +1,193 @@
+.main-container{
+    margin: 0 auto;
+    max-width: 524px;
+    margin-bottom: 50px;
+}
+.card{
+    background: hsla(40, 100%, 58%, 1);
+    background: linear-gradient(90deg, hsla(40, 100%, 58%, 1) 0%, hsla(46, 100%, 80%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(40, 100%, 58%, 1) 0%, hsla(46, 100%, 80%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(40, 100%, 58%, 1) 0%, hsla(46, 100%, 80%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFB929", endColorstr="#FFE899", GradientType=1 );
+    border-radius: 14px;
+    color: #333;
+    padding: 25px;
+}
+.content-box{
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    width: 50%;
+    top: 99%;
+    left: -1px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}
+.dropdown li{
+    padding: 5px;
+    cursor: pointer;
+}
+.dropdown li:hover{
+    background-color: #ffb92973;
+}
+.card input{
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-family: inherit;
+    width: auto;
+    outline: none;
+}
+.payment-form input::placeholder{
+    color: #333;
+}
+.payment-form label{
+    display: block;
+}
+.card .header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 50px;
+}
+.header .title{
+    color: #333;
+    font-size: 22px;
+}
+.header .logo{
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 90px;
+}
+.payment-form .row-card-number{
+    margin-bottom: 30px;
+}
+.payment-form .row-card-number input,
+.payment-form .row-card-number input::placeholder,
+.payment-form .row-name input,
+.payment-form .row-name input::placeholder{
+    font-size: 25px;
+}
+.footer-card-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.payment-form .card-number{
+    font-size: 32px;
+}
+.payment-form .card-expire{
+    display: flex;
+}
+.card-expire input{
+    font-size: 15px;
+}
+.card-expire .card-expire-month{
+    width: 22%;
+}
+.remember-me-container{
+    display: flex;
+    align-items: center;
+}
+.remember-me-container input{
+    width: 15px;
+    accent-color: #FFB929;
+    cursor: pointer;
+}
+.remember-me-container label{
+    padding: 0 0 0 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.action-btns-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    gap: 10px;
+    padding-bottom: 50px;
+}
+.action-btns-container button{
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+    background-color: #FFB929;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.error{
+    color: red;
+    font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-container .card{
+        width: 86%;
+        height: 230px;
+    }
+    .card .header{
+        margin-bottom: 24px;
+    }
+    .header .title{
+        font-size: 18px;
+    }
+    .header .logo{
+        width: 60px;
+        top: -19px;
+    }
+    .payment-form .row-card-number{
+        margin-bottom: 5px;
+    }
+    .payment-form .row-card-number input,
+    .payment-form .row-card-number label,
+    .payment-form .row-card-number input::placeholder,
+    .payment-form .row-name input,
+    .payment-form .row-name label,
+    .payment-form .row-name input::placeholder{
+        font-size: 14px;
+    }
+    .footer-card-container{
+        flex-direction: column;
+        position: relative;
+    }
+    .footer-card-container .row-card-number input,
+    .footer-card-container .row-card-number label,
+    .footer-card-container .row-name input,
+    .footer-card-container .row-name label{
+        font-size: 14px;
+    }
+    .footer-card-container .card-cvv{
+        position: absolute;
+        right: 0;
+    }
+    .footer-card-container .card-cvv input{
+        width: 28px;
+    }
+    .footer-card-container .card-date-container .row,
+    .footer-card-container .row{
+        font-size: 14px;
+    }
+    .action-btns-container{
+        padding-bottom: 0;
+    }
+    .action-btns-container button{
+        font-size: 12px;
+    }
+    
+}

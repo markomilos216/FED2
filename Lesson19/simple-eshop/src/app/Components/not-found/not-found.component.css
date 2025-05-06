@@ -1,0 +1,32 @@
+.not-found-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.not-found-message{
+    text-align: center;
+    padding: 0 15px;
+}
+.not-found-message .main-heading{
+    font-size: 35px;
+}
+.not-found-message .description-text{
+    font-size: 18px;
+    margin: 8px 0 22px 0;
+}
+.not-found-message img{
+    width: 90%;
+    max-width: 650px;
+}
+@media screen and (max-width: 768px) {
+    .not-found-message .main-heading{
+        font-size: 29px;
+    }
+    .not-found-message .description-text{
+        font-size: 15px;
+    }
+}
