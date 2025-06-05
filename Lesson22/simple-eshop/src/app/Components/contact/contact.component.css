@@ -1,0 +1,188 @@
+.contact-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 25px;
+    padding: 0 20px;
+}
+.contact-form-wrapper .contact-form-heading{
+    font-size: 30px;
+}
+.contact-form-wrapper .contact-form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.contact-form .left-side-form{
+    display: flex;
+    flex-direction: column;
+}
+.contact-form input,
+.contact-form button{
+    height: 45px;
+    border-radius: 25px;
+    outline: none;
+}
+.contact-form label{
+    position: relative;
+    font-size: 18px;
+    margin-left: 12px;
+    padding: 8px 0 5px 0;
+}
+.contact-form label.required::before{
+    content: "*";
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    left: -6px;
+}
+.contact-form .personal-data-agreement-container label.required::before{
+    left: -2px;
+}
+.contact-form input{
+   width: 400px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 20px;
+    color: #333;
+    transition: all 0.375s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border: 1px solid #FFB929;
+}
+.personal-data-agreement-container{
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+}
+.personal-data-agreement-container input{
+    width: 15px;
+    accent-color: #FFB929;
+    cursor: pointer;
+}
+.personal-data-agreement-container label{
+    padding: 0 0 0 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.right-side-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.right-side-container textarea{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px 14px;
+    color: #333;
+    transition: all 0.375s;
+    border-radius: 25px;
+    outline: none;
+    resize: none;
+}
+.contact-form button{
+    width: 50%;
+    min-width: 170px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 10px auto;
+    color: #333;
+    background-color: #FFB929;
+    border: none;
+    cursor: pointer;
+}
+.contact-section{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 764.98px;
+    justify-content: flex-start;
+    margin: 45px auto;
+    gap: 85px;
+}
+.contact-section .adress-container{
+    display: flex;
+    gap: 8px;
+}
+.business-contact .heading,
+.customer-support-contact .heading{
+    margin-bottom: 12px;
+}
+.contact-section p{
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+.contact-section i{
+    color: #FFB929;
+    font-size: 22px;
+    margin-right: 8px;
+}
+.error-msg{
+    display: block;
+    color: red;
+    margin-left: 18px;
+    font-weight: bold;
+}
+@media screen and (max-width: 881px) {
+    .contact-form-wrapper .contact-form{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .contact-section{
+        padding: 0 20px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .contact-form-wrapper .contact-form{
+        gap: 9px;
+    }
+    .contact-form-wrapper .contact-form-heading{
+        font-size: 28px;
+    }
+    .contact-form label{
+        font-size: 16px;
+    }
+    .contact-form label:last-child{
+        font-size: 14px;
+    }
+    .contact-form input{
+        font-size: 14px;
+    }
+    .contact-form .left-side-form input{
+        width: 318px;
+    }
+    .contact-form textarea{
+        width: 318px;
+    }
+    .contact-section{
+        justify-content: center;
+        width: 318px;
+        margin: 45px auto;
+        padding: 0 20px;
+        gap: 20px;
+    }
+    .contact-section .business-contact,
+    .contact-section .adress-container{
+        width: 100%;
+    }
+    .business-contact p,
+    .business-contact i,
+    .adress-container p,
+    .adress-container i{
+        font-size: 16px;
+    }
+}
