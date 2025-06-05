@@ -1,0 +1,70 @@
+<div class="main-container">
+    <h2 class="main-heading">{{ isEditMode ? 'Update Card' : 'Add New Card' }}</h2>
+    <div class="container">
+        <form class="payment-cards-form" [formGroup]="paymentCardsForm" (ngSubmit)="onSubmitPaymentCardsForm()">
+            <div class="row">
+                <div class="wrapper">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" formControlName="name">
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('name')?.hasError('required') && paymentCardsForm.get('name')?.touched">
+                        Name is required
+                    </small>
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('name')?.hasError('minlength') && paymentCardsForm.get('name')?.touched">
+                        Name must contain at least 3 characters
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="surname" id="surname" formControlName="surname">
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('surname')?.hasError('required') && paymentCardsForm.get('surname')?.touched">
+                        Surname is required
+                    </small>
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('surname')?.hasError('minlength') && paymentCardsForm.get('surname')?.touched">
+                        Surname must contain at least 3 characters
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" name="card-number" id="card-number" formControlName="cardNumber">
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('cardNumber')?.hasError('required') && paymentCardsForm.get('cardNumber')?.touched">
+                        Card Number is required
+                      </small>
+                      <small class="error-msg" *ngIf="paymentCardsForm.get('cardNumber')?.hasError('pattern') && paymentCardsForm.get('cardNumber')?.touched">
+                        Card Number must be 16 digits
+                      </small>
+                </div>
+                <div class="wrapper">
+                    <label for="expiration-date">Expiration Date:</label>
+                    <input type="text" name="expiration-date" id="expiration-date" formControlName="expirationDate">
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('expirationDate')?.hasError('required') && paymentCardsForm.get('expirationDate')?.touched">
+                        Expiration Date is required
+                    </small>
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('expirationDate')?.hasError('invalidFormat') && paymentCardsForm.get('expirationDate')?.touched">
+                      Use MM/YY format (e.g. 08/26)
+                    </small>
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('expirationDate')?.hasError('invalidMonth') && paymentCardsForm.get('expirationDate')?.touched">
+                      Invalid month. Must be between 01 and 12
+                    </small>
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('expirationDate')?.hasError('expired') && paymentCardsForm.get('expirationDate')?.touched">
+                      Card expired
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="ccv">CCV:</label>
+                    <input type="number" name="ccv" id="ccv" formControlName="ccv">
+                    <small class="error-msg" *ngIf="paymentCardsForm.get('ccv')?.hasError('required') && paymentCardsForm.get('ccv')?.touched">
+                        CCV is required
+                      </small>
+                      <small class="error-msg" *ngIf="paymentCardsForm.get('ccv')?.hasError('pattern') && paymentCardsForm.get('ccv')?.touched">
+                        CCV must be exactly 3 digits
+                      </small>
+                </div>
+            </div>
+            <button class="update-btn" type="submit">{{ isEditMode ? 'Update Card' : 'Add Card' }}</button>
+        </form>
+    </div>
+</div>

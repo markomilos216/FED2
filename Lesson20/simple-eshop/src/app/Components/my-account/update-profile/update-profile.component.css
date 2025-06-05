@@ -1,0 +1,171 @@
+.main-container{
+    padding: 0 25px;
+    width: 100%;
+    min-width: 150px;
+}
+.main-container .main-heading{
+    padding-bottom: 35px;
+}
+.update-profile-form .row{
+    display: flex;
+    gap: 25px;
+}
+.update-profile-form .row .wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.wrapper label{
+    font-size: 18px;
+    margin-left: 8px;
+    padding: 8px 0 5px 0;
+}
+.wrapper input{
+    width: 270px;
+    height: 45px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 24px;
+    color: #333;
+    outline: none;
+    transition: all 0.375s;
+}
+.wrapper input:focus{
+    border: 1px solid #FFB929;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.update-profile-form .update-btn{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    padding: 5px 15px 3px 15px;
+    color: #333;
+    background-color: #FFB929;
+    height: 45px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.wrapper input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.error-msg{
+    display: block;
+    color: red;
+    margin-left: 18px;
+    font-weight: bold;
+}
+.modal-dialog{
+    border: 1px solid #FFB929;
+    border-radius: 25px;
+    padding: 25px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+}
+.modal-dialog .close-modal{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+}
+.modal-dialog .modal-heading{
+    font-size: 20px;
+    padding: 20px 0;
+}
+.update-email-password-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 10px auto;
+}
+.update-email-password-form input{
+    height: 45px;
+    border-radius: 25px;
+    outline: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 24px;
+    color: #333;
+    transition: all 0.375s;
+}
+.update-email-password-form input:focus{
+    border: 1px solid #FFB929;
+}
+.update-email-password-form .submit-password-btn{
+    height: 45px;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    padding: 15px;
+    color: #333;
+    background-color: #FFB929;
+    border: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 1090px) {
+    .update-profile-form .row{
+        display: block;
+    }
+    .wrapper input{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .main-container{
+        padding: 0 12px;
+    }
+    .wrapper label{
+        font-size: 15px;
+    }
+    .wrapper input{
+        height: 35px;
+        font-size: 14px;
+    }
+    .main-container .main-heading{
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+    .update-profile-form .update-btn{
+        font-size: 15px;
+        padding: 4px 12px 5px 12px;
+        border-radius: 20px;
+        margin: 18px auto;
+        display: block;
+    }
+    .update-email-password-form{
+        width: 90%;
+    }
+    .modal-dialog .modal-heading{
+        font-size: 15px;
+        padding: 20px 0px 5px 0px;
+    }
+    .update-email-password-form .submit-password-btn{
+        font-size: 14px;
+    }
+}
+

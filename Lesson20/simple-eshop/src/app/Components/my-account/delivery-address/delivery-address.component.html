@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+    <h2 class="main-heading">Delivery Address</h2>
+    <div class="add-new-btn" routerLink="../delivery-address-form"><i class="fa-solid fa-circle-plus"></i></div>
+    <div class="container">
+        <div class="no-delivery-address-container" *ngIf="addresses.length < 1">
+            <p class="no-delivery-address-text">No addresses found. Add a new address.</p>
+        </div>
+        <section class="address-wrapper" *ngFor="let address of addresses">
+            <button class="delete-btn" (click)="openDeleteDialog(address.id)"><i class="fa-solid fa-xmark"></i></button>
+            <div class="address-container">
+                <div class="personal-data">
+                    <div class="name"><strong>Name: </strong>{{ address.name }}</div>
+                    <div class="surname"><strong>Surname: </strong>{{ address.surname }}</div>
+                    <div class="email"><strong>Email: </strong>{{ address.email }}</div>
+                    <div class="phone"><strong>Phone: </strong>{{ address.phone }}</div>
+                </div>
+                <div class="address-data">
+                    <div class="city"><strong>City: </strong>{{ address.city }}</div>
+                    <div class="street"><strong>Street: </strong>{{ address.street }}</div>
+                    <div class="postal-code"><strong>Postal Code: </strong>{{ address.postalCode }}</div>
+                    <div class="state"><strong>State:</strong>{{ address.state }}</div>
+                </div>
+            </div>
+            <button class="edit-address-btn" (click)="onEditAddress(address.id)"><i class="fa-solid fa-pencil"></i></button>
+        </section>
+    </div>
+    <dialog class="delete-confirmation-dialog" #modalDialog>
+        <h2 class="dialog-msg">Are you sure you want to delete this address?</h2>
+        <div class="modal-buttons-container">
+            <button class="confirm-btn" (click)="onDeleteAddress()">Yes</button>
+            <button class="cancel-btn" (click)="closeDialog()">No</button>
+        </div>
+    </dialog>
+</div>

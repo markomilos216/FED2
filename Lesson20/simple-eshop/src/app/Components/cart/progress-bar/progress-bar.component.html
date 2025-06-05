@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="progress-bar">
+        <div class="step-1" 
+             [ngStyle]="{ 'background-color': currentStep === 'shipping' || currentStep === 'payment' ? '#FFB929' : '#ccc' }"
+             routerLink="/cart/personal-info-shipping-and-payment">1</div>
+        <div class="line-1"
+             [ngStyle]="{ 'background-color': currentStep === 'payment' ? '#FFB929' : '#ccc' }"></div>
+        <div class="step-2"
+             [ngStyle]="{ 'background-color': currentStep === 'payment' ? '#FFB929' : '#ccc' }">2</div>
+    </div>
+</div>
