@@ -1,0 +1,8 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<div class="toast-box">
+  <div *ngFor="let toast of snackBarMessages" class="toast" [class]="toast.typeClass" [attr.data-id]="toast.id">
+    <i class="fa-solid" [class]="toast.iconClass"></i> {{ toast.message }}
+  </div>
+</div>

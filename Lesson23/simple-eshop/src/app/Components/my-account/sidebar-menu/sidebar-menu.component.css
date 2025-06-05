@@ -1,0 +1,108 @@
+.main-container{
+    height: 100%; 
+    width: 100%;
+    min-width: 250px;
+    border-right: 1px solid #FFB929;
+}
+.sidebar-menu{
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+.pofile-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.pofile-wrapper img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.menu-links-container{
+    height: 35vh;
+    flex: 1 1 auto;
+    overflow-y: hidden; 
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+    padding: 7px 5px;
+}
+.menu-links-container:hover {
+    overflow-y: auto;
+}
+.menu-links-container::-webkit-scrollbar {
+    width: 6px;
+}
+.menu-links-container::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+.menu-links-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+.menu-links-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.menu-links li{
+    cursor: pointer;
+}
+.menu-links .row{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 10px 0 10px 5px;
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #FFB929;
+}
+.menu-links .row i{
+    width: 20px;
+    text-align: center;
+}
+.menu-links .row.active-link{
+    color: #FFB929;
+    font-weight: 600;
+}
+@media screen and (max-width: 800px){
+    .pofile-wrapper img{
+        width: 60px;
+        height: 60px;
+    }
+    .pofile-wrapper .user-name{
+        font-size: 15px;
+    }
+    .menu-links .row{
+        font-size: 15px;
+    }
+    .menu-links-container{
+        height: 40vh;
+    }
+}
+@media screen and (max-width: 768px) {
+    .main-container{
+        min-width: 50px;
+    }
+    .pofile-wrapper img{
+        width: 25px;
+        height: 25px;
+    }
+    .pofile-wrapper .user-name{
+        display: none;
+    }
+    .menu-links-container{
+        padding: 15px 0;
+        height: 52vh;
+    }
+    .menu-links .row{
+        padding-left: 0;
+    }
+    .menu-links .row .menu-text{
+        display: none;
+    }
+    .menu-links .row i{
+        font-size: 18px;
+        width: 30px;
+    }
+}

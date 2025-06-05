@@ -1,0 +1,73 @@
+<ng-container class="contact-container">
+    <section class="contact-form-wrapper">
+        <h2 class="contact-form-heading">CONTACT US</h2>
+        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <aside class="left-side-form">
+                <label for="name" class="required">Name</label>
+                <input type="text" name="name" id="name" formControlName="name">
+                <small *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error-msg">
+                    Name is required (min 3 characters).
+                </small>
+                <label for="email" class="required">Email</label>
+                <input type="email" name="email" id="email" formControlName="email">
+                <small *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-msg">
+                    Enter a valid email address.
+                </small>
+                <label for="phone-number" class="required">Phone Number</label>
+                <input type="text" name="phone-number" id="phone-number" formControlName="phone">
+                 <small *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="error-msg">
+                    Phone number is required.
+                </small>
+                <label for="subject" class="required">Subject</label>
+                <input type="text" name="subject" id="subject" formControlName="subject">
+                <small *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="error-msg">
+                    Subject is required (min 5 characters).
+                </small>
+            </aside>
+            <aside class="right-side-container">
+                <label for="message" class="required">Message</label>
+                <textarea name="message" id="message" formControlName="message"></textarea>
+                <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error-msg">
+                    Message is required (min 10 characters).
+                </small>
+                <div class="personal-data-agreement-container">
+                    <input type="checkbox" name="personal-data-agreement" id="personal-data-agreement" formControlName="personalDataAgreement">
+                    <label for="personal-data-agreement" class="required">I agree to the processing of my personal data.</label>
+                </div>
+                <small *ngIf="contactForm.get('personalDataAgreement')?.invalid && contactForm.get('personalDataAgreement')?.touched" class="error-msg">
+                    You must agree before submitting.
+                </small>
+                <button class="submit-btn">Submit</button>
+            </aside>
+        </form>
+    </section>
+    <section class="contact-section">
+        <div class="business-contact">
+            <h3 class="heading">Business Contact</h3>
+            <p class="email"><i class="fa-solid fa-envelope"></i> business&#64;modio.com</p>
+            <p class="phone-number"><i class="fa-solid fa-phone"></i> +1 (123) 456-7890</p>
+            <div class="adress-container">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="adress">
+                    123 Business Blvd Suite 100<br>
+                    Business City, BC 12345<br>
+                    USA
+                </p>
+            </div>
+        </div>
+        <div class="customer-support-contact">
+            <h3 class="heading">Customer Support Contact</h3>
+            <p class="email"><i class="fa-solid fa-envelope"></i> support&#64;modio.com</p>
+            <p class="phone-number"><i class="fa-solid fa-phone"></i> +1 (800) 123-4567</p>
+            <div class="adress-container">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="adress">
+                    456 Customer Care St, Suite 200<br>
+                    Service Town, ST 67890<br>
+                    USA
+                </p>
+            </div>
+        </div>
+    </section>
+    
+</ng-container>

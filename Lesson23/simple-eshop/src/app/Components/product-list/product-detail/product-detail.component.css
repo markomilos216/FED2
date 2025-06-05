@@ -1,0 +1,107 @@
+.main-wrapper{
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-detail-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.product-detail-container .product-detail{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 16px 0;
+    padding: 32px 0;
+}
+.product-detail .left-side-product-detail,
+.product-detail .right-side-product-detail{
+    padding: 20px;
+}
+.left-side-product-detail img{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+.right-side-product-detail .product-name{
+    font-size: 26px;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.right-side-product-detail .product-description{
+    font-size: 18px;
+    line-height: 1.6;
+}
+.right-side-product-detail .product-qunatity{
+    font-size: 14px;
+    margin-top: 12px;
+}
+.right-side-product-detail .product-category{
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: #FFB929;
+    border-radius: 25px;
+}
+.right-side-product-detail .product-price{
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 20px
+}
+.right-side-product-detail .action-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 22px;
+}
+.action-container .quantity-container{
+    border: 2px solid #FFB929;
+    border-radius: 25px;
+}
+.action-container .quantity-container button{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 16px;
+    background-color: #FFB929;
+    border: none;
+    outline: none;
+    cursor: pointer;
+} 
+.quantity-container .decrease-quantity-btn{
+    border-radius: 25px 0 0 25px;
+}
+.quantity-container .increase-quantity-btn{
+    border-radius: 0 25px 25px 0;
+}
+.quantity-container .quantity-nuber{
+    padding: 6px 15px;
+}
+.action-container .add-to-cart-btn{
+    font-family: "Nunito Sans", serif;
+    font-weight: 600;
+    padding: 8px 16px;
+    color: #333;
+    background-color: #FFB929;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 940px) {
+    .product-detail-container .product-detail{
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0;
+    }
+    .product-detail .left-side-product-detail{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+    .right-side-product-detail .action-container{
+        margin-bottom: 35px;
+    }
+}

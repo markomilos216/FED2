@@ -1,0 +1,56 @@
+<div class="main-container">
+    <h2 class="main-heading">{{ isEditMode ? 'Update Product' : 'Add New Product' }}</h2>
+    <div class="container">
+        <form class="product-management-form" [formGroup]="productManagementForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="wrapper">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" formControlName="name">
+                    <small class="error-msg" *ngIf="productManagementForm.get('name')?.hasError('required') && productManagementForm.get('name')?.touched">
+                        Name is required
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" formControlName="description">
+                    <small class="error-msg" *ngIf="productManagementForm.get('description')?.hasError('required') && productManagementForm.get('description')?.touched">
+                        Description is required
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="category">Category</label>
+                    <input type="category" name="category" id="category" formControlName="categoryId">
+                    <small class="error-msg" *ngIf="productManagementForm.get('categoryId')?.hasError('required') && productManagementForm.get('categoryId')?.touched">
+                        Category is required
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" id="price" formControlName="price">
+                    <small class="error-msg" *ngIf="productManagementForm.get('price')?.hasError('required') && productManagementForm.get('price')?.touched">
+                        Price is required
+                    </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <label for="in-stock">In Stock</label>
+                    <input type="number" name="in-stock" id="in-stock" formControlName="stock">
+                    <small class="error-msg" *ngIf="productManagementForm.get('stock')?.hasError('required') && productManagementForm.get('stock')?.touched">
+                        In Stock is required
+                    </small>
+                </div>
+                <div class="wrapper">
+                    <label for="img">Image URL</label>
+                    <input type="text" name="img" id="img" formControlName="imageUrl">
+                    <small class="error-msg" *ngIf="productManagementForm.get('imageUrl')?.hasError('required') && productManagementForm.get('imageUrl')?.touched">
+                        Image URL is required
+                    </small>
+                </div>
+            </div>
+            <button class="update-btn" type="submit">{{ isEditMode ? 'Update Product' : 'Add Product' }}</button>
+        </form>
+    </div>
+</div>
