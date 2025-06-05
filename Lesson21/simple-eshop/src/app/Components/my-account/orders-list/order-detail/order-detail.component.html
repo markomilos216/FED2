@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+    <div class="heading-container">
+        <button routerLink="/my-account/orders-list" class="btn-back"><i class="fa-solid fa-left-long"></i></button>
+        <h2 class="main-heading">Order {{ selectedOrder?.id }}</h2>
+        <select name="status" class="status" [(ngModel)]="orderStatus" (change)="onStatusChange()">
+            <option value="Pending">Pending</option>
+            <option value="Processing">Processing</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Delivered">Delivered</option>
+        </select>
+    </div>
+    <div class="container">
+        <section class="orders-wrapper">
+            <div class="order-list">
+                <h2 class="title">Products</h2>
+                <div class="items-container" *ngFor="let product of selectedOrder?.items">
+                    <img [src]="product.imageUrl" [alt]="product.name">
+                    <div class="row-container">
+                        <p class="product-name"><strong>Product: </strong>{{ product.name }}</p>
+                        <p class="price"><strong>Price: </strong>{{ product.price }} €</p>
+                        <p class="qty"><strong>Quantity: </strong>{{ product.quantity }} pcs</p>
+                    </div>
+                </div>
+                <div class="border"></div>
+                <h2 class="title">Adress</h2>
+                <div class="address-container">
+                    <div class="column">
+                        <p><strong>Name: </strong>{{ selectedOrder?.deliveryAddress?.name }}</p>
+                        <p><strong>Surname: </strong>{{ selectedOrder?.deliveryAddress?.surname }}</p>
+                        <p><strong>Phone: </strong>{{ selectedOrder?.deliveryAddress?.phone }}</p>
+                        <p><strong>Email: </strong>{{ selectedOrder?.deliveryAddress?.email }}</p>
+                    </div>
+                    <div class="column">
+                        <p><strong>City: </strong>{{ selectedOrder?.deliveryAddress?.city }}</p>
+                        <p><strong>Street: </strong>{{ selectedOrder?.deliveryAddress?.street }}</p>
+                        <p><strong>Postal Code: </strong>{{ selectedOrder?.deliveryAddress?.postalCode }}</p>
+                        <p><strong>State: </strong>{{ selectedOrder?.deliveryAddress?.state }}</p>
+                    </div>
+                </div>
+                <div class="border"></div>
+                <h2 class="title">Shipping And Payment</h2>
+                <div class="shipping-and-payment">
+                    <p class="shipping"><strong>Shipping {{ selectedOrder?.shipping?.shipping }}: </strong>{{ orderShippingPrice }} €</p>
+                    <div class="payment"><strong>Payment By {{ selectedOrder?.shipping?.payment }}: </strong>{{ orderPaymentPrice }} €</div>
+                </div>
+                <div class="total-price-container">
+                    <p class="total-price"><strong>Total Price: </strong>{{ this.totoalPrice }} €</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="main-container">
+    <h2 class="main-heading">Shipping & Payment Details</h2>
+    <form class="shipping-form" [formGroup]="shippingForm">
+        <h3 class="shipping-heading">Shipping</h3>
+        <div class="row-container">
+            <label for="store-pickup" class="simple-clickup">
+                <div class="option-section">
+                    <input type="radio" id="store-pickup" value="Store Pickup" formControlName="shipping" checked>
+                    <div class="option-description">
+                        <p class="shipping-option">Store Pickup</p>
+                        <span class="shipping-description">Pick up your order from our store</span>
+                    </div>
+                </div>
+                <div class="price-section">
+                    <p class="price">€ 0.00</p>
+                </div>
+            </label>
+        </div>
+        <div class="row-container">
+            <label for="gls-delivery" class="simple-clickup">
+                <div class="option-section">
+                    <input type="radio" id="gls-delivery" value="GLS" formControlName="shipping">
+                    <div class="option-description">
+                        <p class="shipping-option">GLS</p>
+                        <span class="shipping-description">Delivery by GLS courier service</span>
+                    </div>
+                </div>
+                <div class="price-section">
+                    <p class="price">€ 4.80</p>
+                </div>
+            </label>
+        </div>
+        <div class="row-container">
+            <label for="slovak-post-delivery" class="simple-clickup">
+                <div class="option-section">
+                    <input type="radio" id="slovak-post-delivery" value="Slovak Post" formControlName="shipping">
+                    <div class="option-description">
+                        <p class="shipping-option">Slovak Post</p>
+                        <span class="shipping-description">Delivery by Slovak Post</span>
+                    </div>
+                </div>
+                <div class="price-section">
+                    <p class="price">€ 6.30</p>
+                </div>
+            </label>
+        </div>
+    </form>
+    <form class="payment-form" [formGroup]="paymentForm">
+        <h3 class="payment-heading">Payment</h3>
+        <div class="row-container">
+            <label for="card-payment" class="simple-clickup">
+                <div class="option-section">
+                    <input type="radio" id="card-payment" value="Credit/Debit Card" formControlName="payment" checked>
+                    <div class="option-description">
+                        <p class="payment-option">Credit/Debit Card</p>
+                        <span class="payment-description">Secure your payment with credit or debit card</span>
+                    </div>
+                </div>
+                <div class="price-section">
+                    <p class="price">€ 0.00</p>
+                </div>
+            </label>
+        </div>
+        <div class="row-container">
+            <label for="cash-on-delivery" class="simple-clickup">
+                <div class="option-section">
+                    <input type="radio" id="cash-on-delivery" value="Cash on Delivery" formControlName="payment">
+                    <div class="option-description">
+                        <p class="payment-option">Cash on Delivery</p>
+                        <span class="payment-description">Pay when you recive your order</span>
+                    </div>
+                </div>
+                <div class="price-section">
+                    <p class="price">€ 2.99</p>
+                </div>
+            </label>
+        </div>
+    </form>
+</div>

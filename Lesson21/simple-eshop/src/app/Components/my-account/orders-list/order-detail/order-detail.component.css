@@ -1,0 +1,139 @@
+.content-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 150px;
+    height: 55vh;
+    padding: 0 25px;
+}
+.heading-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.heading-container .btn-back{
+    font-family: inherit;
+    font-size: 18px;
+    background-color: #FFB929;
+    padding: 7px 10px 6px 10px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.heading-container .status{
+    font-size: 15px;
+    background-color: #FFB929;
+    padding: 2px 5px;
+    font-family: inherit;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.container{
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 7px 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+.container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.orders-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px 3px rgb(0 0 0 / 10%);
+    border-radius: 25px;
+    position: relative;
+    padding: 15px;
+    margin-bottom: 13px;
+}
+.order-list .items-container{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.order-list .title{
+    padding-bottom: 5px;
+}
+.orders-wrapper .border{
+    width: 100%;
+    height: 1px;
+    background-color: #FFB929;
+    margin: 10px 0;
+}
+.items-container img{
+    width: 150px;
+}
+.address-container{
+    display: flex;
+    gap: 50px;
+}
+.order-list .total-price-container{
+    display: flex;
+    width: 100%;
+}
+.total-price-container .total-price{
+    font-size: 18px;
+    margin-top: 18px;
+    border-bottom: 2px solid #FFB929;
+}
+@media screen and (max-width: 960px) {
+    .content-wrapper{
+        padding-left: 12px;
+    }
+    .address-container{
+        flex-direction: column;
+        gap: 0;
+    }
+}
+@media screen and (max-width: 850px) {
+    .heading-container{
+        gap: 5px;
+    }
+    .heading-container .btn-back{
+        padding: 5px 8px 4px 8px;
+        font-size: 12px;
+    }
+    .heading-container .main-heading{
+        font-size: 14px;
+    }
+    .heading-container .status{
+        font-size: 12px;
+    }
+    .order-list{
+        font-size: 14px;
+    }
+    .order-list .title,
+    .order-list .total-price-container .total-price{
+        font-size: 16px;
+    }
+    .order-list .items-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    .items-container img{
+        width: 100px;
+        margin: auto;
+    }
+    .orders-wrapper .border{
+        margin: 6px 0;
+    }
+}
